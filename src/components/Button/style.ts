@@ -5,13 +5,13 @@ export const StyledButton = styled.button`
   padding: 10px;
   border: none;
   border-radius: 20px;
-  background-color: ${({ theme }) => theme.colors.primary};
-  color: white;
+  background: radial-gradient(50% 383.1% at 50% 50%, rgba(255, 246, 191, 0.5) 0%, rgba(154, 239, 148, 0.2) 100%);
+  color: ${({theme})=> theme.colors.secondary};
   font-size: 16px;
-  transition: background-color 0.3s ease;
+  transition: background-image 0.6s ease;
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.secondary};
+    opacity: 0.9;
   }
 
   @media (min-width: 768px) {

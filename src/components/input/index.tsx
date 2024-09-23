@@ -1,15 +1,17 @@
 import React from 'react';
-import { InputContainer } from './style'
+import { InputContainer } from './style';
+import { IconType } from 'react-icons';
 
 interface InputProps {
   type: string;
   placeholder: string;
-  icon?: React.ReactNode;
+  icon?: IconType; 
+  iconColor?: string;
 }
 
-const Input: React.FC<InputProps> = ({ type, placeholder, icon }) => (
+const Input: React.FC<InputProps> = ({ type, placeholder, icon: Icon }) => (
   <InputContainer>
-    <span>{icon}</span>
+    {Icon && <span className="icon"><Icon /></span>}
     <input type={type} placeholder={placeholder} />
   </InputContainer>
 );

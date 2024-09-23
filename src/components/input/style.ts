@@ -6,25 +6,33 @@ export const InputContainer = styled.div`
 
   input {
     width: 100%;
-    padding: 10px;
-    padding-left: 40px;
-    border: 1px solid ${({ theme }) => theme.colors.lightGray};
+    padding: 15px;
+    padding-left: 45px;
+    border: 1px solid  ${({ theme }) => theme.colors.secondary};
     border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: transparent;
     color: #fff;
     font-size: 16px;
     outline: none;
 
+    &::placeholder {
+      color: ${({ theme }) => theme.colors.secondary};
+      opacity: 0.6; 
+    }
+
     @media (min-width: 768px) {
       padding: 15px;
+      padding-left: 50px;
     }
   }
 
-  span {
+  .icon {
     position: absolute;
-    left: 10px;
-    top: 50%;
+    left: 20px;
+    top: 52%;
     transform: translateY(-50%);
-    color: #fff;
+    font-size: 20px;
+    color:  ${({ theme }) => theme.colors.secondary};
+    opacity: 0.6;
   }
 `;

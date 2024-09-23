@@ -6,13 +6,13 @@ export const LoginContainer = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: url('/path-to-background-image') no-repeat center center;
+  background: url('img/background-login.jpg') no-repeat center center;
   background-size: cover;
 `;
 
 export const LoginBox = styled.div`
-  background: rgba(255, 255, 255, 0.1);
-  padding: 20px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 60px;
   border-radius: 20px;
   width: 90%;
   max-width: 400px;
@@ -20,6 +20,8 @@ export const LoginBox = styled.div`
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+
+  border: 2px solid rgba(255, 246, 191, 0.4);
 `;
 
 export const Logo = styled.div`
@@ -32,6 +34,7 @@ export const Logo = styled.div`
 `;
 
 export const Title = styled.h2`
-  color: #fff;
+  color: ${({ theme }) => theme.colors.secondary};
+  opacity: 0.6;
   margin-bottom: 20px;
 `;
