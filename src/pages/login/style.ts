@@ -6,7 +6,7 @@ export const LoginContainer = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: url('img/3.svg') no-repeat center center;
+  background: url('img/background-login.svg') no-repeat center center;
   background-size: cover;
 `;
 
