@@ -11,13 +11,14 @@ export const InputContainer = styled.div`
     border: 1px solid  ${({ theme }) => theme.colors.secondary};
     border-radius: 20px;
     background-color: transparent;
-    color: #fff;
+    color: ${({ theme }) => theme.colors.secondary};
+    opacity: 0.8;
     font-size: 16px;
     outline: none;
 
     &::placeholder {
       color: ${({ theme }) => theme.colors.secondary};
-      opacity: 0.6; 
+      opacity: 0.4; 
     }
 
     @media (min-width: 768px) {
