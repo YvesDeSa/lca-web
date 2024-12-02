@@ -2,7 +2,9 @@ import {
     LoginContainer,
     LoginBox,
     Logo,
-    Title
+    Title,
+    CompaniesBox,
+    Company
 } from './style';
 
 import { LuUser2, LuLock } from "react-icons/lu";
@@ -11,7 +13,10 @@ import Input from '../../components/input';
 import Button from '../../components/Button';
 
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useToast } from '../../hooks/toast';
+
+import { jwtDecode } from "jwt-decode";
 import axios from 'axios';
 
 const Login = () => {
@@ -21,46 +26,36 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
 
+  const navigation = useNavigate();
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log({username, password})
-
-    if (!username || !password) {
-      addToast({
-        type: 'error',
-        title: 'Empty inputs',
-        description: 'Fill in all the fields to continue.'
-      });
-      return;
-    }
-
+  
     try {
       setLoading(true);
-
-      const response = await axios.post('https://sua-api.com/auth/login', {
+      
+      const response = await axios.post('http://localhost:8080/accounts/auth', {
         username,
         password
       });
-
+  
       const { token } = response.data;
       localStorage.setItem('jwtToken', token);
+  
+      const decodedToken = jwtDecode(token);
+      console.log(decodedToken)
 
-      addToast({
-        type: 'success',
-        title: 'Login successful',
-        description: 'You have been successfully authenticated!'
-      });
-
+      navigation('/dashboard');
+      
     } catch (error) {
       addToast({
         type: 'error',
         title: 'Login error',
-        description: 'Invalid credentials or server error.'
+        description: 'Invalid credentials or server error.',
       });
     } finally {
       setLoading(false);
-  }
-}
+    }
+  };
   
   return (
     <LoginContainer>
@@ -89,6 +84,11 @@ const Login = () => {
         <Button text="Sign in" type="submit" loading={loading} />
         </form>
       </LoginBox>
+      <CompaniesBox>
+        <Company>
+          <img src="img/company1.svg" alt="" />
+        </Company>
+      </CompaniesBox>
     </LoginContainer>
   );
 };

@@ -5,6 +5,7 @@ export const LoginContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: 100vh;
   background: url('img/background-login.svg') no-repeat center center;
   background-size: cover;
@@ -38,3 +39,29 @@ export const Title = styled.h2`
   opacity: 0.6;
   margin-bottom: 20px;
 `;
+
+export const CompaniesBox = styled.div`
+  margin-top: 5vh;
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Company = styled.div`
+  width: 200px;
+  height: 65px;
+
+  background-color: #8f8f8f;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 100%;
+    margin: 0 auto;
+  }
+`;
+
