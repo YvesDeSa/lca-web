@@ -33,7 +33,7 @@ const Login = () => {
     try {
       setLoading(true);
       
-      const response = await axios.post('http://localhost:8080/accounts/auth', {
+      const response = await axios.post('http://localhost:8000/accounts/auth', {
         username,
         password
       });
