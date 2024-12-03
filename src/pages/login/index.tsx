@@ -33,7 +33,7 @@ const Login = () => {
     try {
       setLoading(true);
       
-      const response = await axios.post('http://localhost:8000/accounts/auth', {
+      const response = await axios.post('http://10.20.240.32:8000/accounts/auth', {
         username,
         password
       });
