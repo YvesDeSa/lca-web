@@ -33,7 +33,7 @@ const Login = () => {
     try {
       setLoading(true);
       
-      const response = await axios.post('http://127.0.0.1:8000/accounts/auth', {
+      const response = await axios.post('https://lca-server.onrender.com/accounts/auth', {
         username,
         password
       });
