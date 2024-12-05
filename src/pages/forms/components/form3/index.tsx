@@ -90,7 +90,7 @@ const TabsWithSubTabs: React.FC = () => {
           <>
            <SubTabContainer>
       <SubTab selected={activeSubTab === 0} onClick={() => setActiveSubTab(0)}>
-        Waster
+        Waste
       </SubTab>
       <SubTab selected={activeSubTab === 1} onClick={() => setActiveSubTab(1)}>
         Sludge
